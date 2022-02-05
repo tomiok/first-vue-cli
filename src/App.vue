@@ -1,15 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <app-header title="upcoming movies"></app-header>
+  <app-list-movies></app-list-movies>
+  <app-footer></app-footer>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppHeader from './components/AppHeader'
+import AppListMovies from "@/components/AppListMovies";
+import AppFooter from "@/components/AppFooter";
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
+    AppFooter,
+    AppListMovies,
+    AppHeader
   }
 }
 </script>
