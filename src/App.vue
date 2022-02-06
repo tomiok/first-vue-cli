@@ -1,5 +1,5 @@
 <template>
-  <app-header title="upcoming movies"></app-header>
+  <app-header title="Upcoming movies"></app-header>
   <app-list-movies></app-list-movies>
   <app-footer></app-footer>
 </template>

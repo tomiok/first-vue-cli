@@ -10,5 +10,8 @@
 </script>
 
 <style>
-
+h1 {
+  text-align: center;
+  text-decoration: underline;
+}
 </style>
