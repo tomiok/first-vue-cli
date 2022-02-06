@@ -3,26 +3,44 @@
   <template v-else>
     <p> {{ movies.length }} {{ named }} to show </p>
     <ul :class="{
-           oneItem: movies.length === 0,
+           oneItem: movies.length === 1,
            multipleItems: movies.length > 1,
           }">
       <li v-for="m in movies" :key="m">{{ m }}
       </li>
     </ul>
   </template>
+  <form @submit.prevent="add">
+    <label> {{ form_add }}: </label>
+    <input type="text" v-model="newMovie"/>
+    <br>
+    <button type="submit">add</button>
+  </form>
+  <br>
+  <button @click="clear"> clear data</button>
+  <br>
 </template>
-
 <script>
 
 export default {
   name: "AppListMovies",
   data() {
     return {
-      movies: ["Batman I", "Spider man", "Dune", "House of Gucci"],
-      named: "movies"
+      movies: [],
+      named: "movies",
+      form_add: "add movie",
+      newMovie: ""
     }
-
   },
+  methods: {
+    clear() {
+      this.movies = [];
+    },
+    add() {
+      this.movies.push(this.newMovie);
+      this.newMovie = "";
+    }
+  }
 }
 </script>
 
@@ -30,8 +48,9 @@ export default {
 ul {
   padding: 10px;
   list-style: none;
-  text-align: justify;
+  text-align: center;
 }
+
 .oneItem {
   border: 1px solid burlywood;
 }
